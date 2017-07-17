@@ -1,0 +1,27 @@
+/* This css file is included by being imported in index.js */
+
+html, body {
+    width: 100%;
+    background: #f8f8f8;
+    color:#419eda;
+}
+
+table{
+    border: 1px solid #efefef;
+}
+
+tr:nth-child(2n) {
+    background-color: #d8d8d8;
+}
+
+th {
+    text-align: center;
+    color: white;
+    background-color: #061f47;
+}
+
+td{
+    width:100px;
+    border: 1px solid #efefef;
+    text-align: center;
+}
