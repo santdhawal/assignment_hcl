@@ -30,3 +30,18 @@ td{
     padding: 5px;
     text-align: center;
 }
+
+.status{
+    margin: 10 auto;
+    width: 110px;
+}
+
+#stompStatus{
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    width:10px;
+    height:10px;
+    background: green;
+    display: inline-block;
+}

@@ -15,9 +15,13 @@ class Main {
     const subscription = client.subscribe("/fx/prices", function(message){
       const data = JSON.parse(message.body);
       model.updateData(data);
-    });
-    
+    });    
   }
+
+  error(error){
+  	document.getElementById('stompStatus').style.background = 'red';
+  }
+
 }
 
 exports.main = new Main();
