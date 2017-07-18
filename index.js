@@ -23,10 +23,13 @@ client.debug = function(msg) {
 };
 
 // once connection is established, initialize
-let connectCallback = function() {
+const connectCallback = function() {
   main.init(client);
 };
 
-client.connect({}, connectCallback, function(error) {
-  alert(error.headers.message);
-});
+// if not able to establish connection
+const errorCallback = function(error){
+	main.error(error);
+};
+
+client.connect({}, connectCallback, errorCallback);
