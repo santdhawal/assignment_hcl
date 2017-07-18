@@ -11,17 +11,22 @@ table{
 }
 
 tr:nth-child(2n) {
-    background-color: #d8d8d8;
+    background-color: #d9d9d9;
 }
 
 th {
     text-align: center;
-    color: white;
-    background-color: #061f47;
+    color: #000000;
+    background-color: #8e97a8;
+    -webkit-border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+    padding: 5px;
 }
 
 td{
     width:100px;
     border: 1px solid #efefef;
+    padding: 5px;
     text-align: center;
 }
