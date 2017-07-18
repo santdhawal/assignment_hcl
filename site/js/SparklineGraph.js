@@ -24,16 +24,11 @@ class SparklineGraph {
   // set Interval
   setIntervals(){
     const self = this;
-    let intervalCounts = 0;
+    // reset in 30 seconds
     this.interval = setInterval(function () {
-      if(intervalCounts === 30){ // reset in 30 seconds
         self.reset();
-        intervalCounts = 0;
         self.clearIntervals()
-      } else {
-        intervalCounts++;
-      }
-    }, 1000);
+    }, 30000);
   }
 
   // Clear Interval
