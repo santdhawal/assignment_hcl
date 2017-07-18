@@ -3,15 +3,22 @@
 html, body {
     width: 100%;
     background: #f8f8f8;
-    color:#419eda;
+    color:#032b5a;
 }
 
 table{
-    border: 1px solid #efefef;
+    border: 1px solid #449ed0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 }
 
 tr:nth-child(2n) {
     background-color: #d9d9d9;
+}
+
+tr:nth-child(2n+1) {
+    background-color: #ececec;
 }
 
 th {
