@@ -26,8 +26,8 @@ class SparklineGraph {
     const self = this;
     // reset in 30 seconds
     this.interval = setInterval(function () {
+        self.clearIntervals();
         self.reset();
-        self.clearIntervals()
     }, 30000);
   }
 
@@ -37,8 +37,8 @@ class SparklineGraph {
   }
 
   reset(){
-    this.dataArray = [];
     this.plot();
+    this.dataArray = [];    
   };
 
   // When notifies by the modal send the request of update
