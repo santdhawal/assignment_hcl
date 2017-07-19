@@ -20,7 +20,7 @@ class SparklineGraph {
    * @method - to create instance & draw the graph
    */
   plot() {
-    if(this.sparkline == null) {
+    if(this.sparkline === null) {
       this.sparkline = new Sparkline(this.element); // create instance of sparkline
     }
     this.draw();
