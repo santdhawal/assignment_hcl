@@ -22,13 +22,22 @@ client.debug = function(msg) {
   }
 };
 
-// once connection is established, initialize
+
+/**
+ * This callback is used as Stomp connection success.
+ * @callback connectCallback
+ */
 const connectCallback = function() {
-  main.init(client);
+	// once connection is established, initialize
+  	main.init(client);
 };
 
-// if not able to establish connection
+/**
+ * This callback is used as Stomp connection failure.
+ * @callback errorCallback
+ */
 const errorCallback = function(error){
+	// if not able to establish connection
 	main.error(error);
 };
 
