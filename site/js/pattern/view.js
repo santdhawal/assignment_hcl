@@ -1,13 +1,23 @@
 'use strict';
 
+// Importing the modules
 const { SparklineGraph } = require('../sparklineGraph.js');
 
+/** Class representing a View. */
 class View {
+  /**
+   * Create a view.
+   * @param {obj} model - model object
+   * @param {obj} tableBody - document object to render view
+   */
   constructor(model, tableBody) {
     this.model = model;
     this.tableBody = tableBody;
   }
 
+  /**
+   * @method - to update view with updated model
+   */
  render() {
    const data = this.model.data;
    const element = document.getElementById(data.name);
@@ -40,7 +50,11 @@ class View {
 
   this.sort(true);
  }
-// method to sort tale
+ 
+  /**
+   * @method - to sort table
+   * @param {string} - sorting type, ascending or descending
+   */
  sort(asc) {
 		let tableBody = this.tableBody,
 		    rows = tableBody.getElementsByTagName("tr"),
@@ -75,4 +89,5 @@ class View {
   }
 }
 
+/** module that exports View */
 exports.View = View;
