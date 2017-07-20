@@ -20,7 +20,7 @@ class SparklineGraph {
    * @method - to create instance & draw the graph
    */
   plot() {
-    if(this.sparkline == null) {
+    if(this.sparkline === null) {
       this.sparkline = new Sparkline(this.element); // create instance of sparkline
     }
     this.draw();
@@ -38,16 +38,11 @@ class SparklineGraph {
    */
   setIntervals(){
     const self = this;
-    let intervalCounts = 0;
+    // reset in 30 seconds
     this.interval = setInterval(function () {
-      if(intervalCounts === 30){ // reset in 30 seconds
+        self.clearIntervals();
         self.reset();
-        intervalCounts = 0;
-        self.clearIntervals()
-      } else {
-        intervalCounts++;
-      }
-    }, 1000);
+    }, 30000);
   }
 
   /**
@@ -61,8 +56,9 @@ class SparklineGraph {
    * @method - to reset data & graph
    */
   reset(){
-    this.dataArray = [];
     this.plot();
+    //this.dataArray = [];
+    this.dataArray = this.dataArray.slice(this.dataArray.length-2, this.dataArray.length-1);   // keep the last 2 values and remove all other values 
   };
 
   /**
@@ -72,7 +68,7 @@ class SparklineGraph {
   notify(data) {
     if("spark_"+data.name === this.element.id) {
       this.dataArray.push((data.bestBid + data.bestAsk) / 2);
-      if(this.dataArray.length === 1) {
+      if(this.dataArray.length === 3) {
         this.setIntervals();
       }
     }

@@ -25,7 +25,7 @@ class View {
    if(element) {
      const tableElement = document.getElementById(data.name);
      for(let i=0; i<Object.keys(data).length; i++) {
-       tableElement.children[i].innerHTML = (i === 0 ) ? Object.values(data)[i].match(/.{1,3}/g).join('-').toUpperCase() : Object.values(data)[i].toFixed(6);
+       tableElement.children[i].innerHTML = (i === 0 ) ? Object.values(data)[i].match(/.{1,3}/g).join('-').toUpperCase() : Object.values(data)[i].toFixed(10);
      }
    } else { // else create new row for element
      let row = document.createElement("tr");
@@ -34,7 +34,7 @@ class View {
        if(i == 0) {
          row.innerHTML += "<td>"+Object.values(data)[i].match(/.{1,3}/g).join('-').toUpperCase()+"</td>";
        } else {
-         row.innerHTML += "<td>"+Object.values(data)[i].toFixed(6)+"</td>";
+         row.innerHTML += "<td>"+Object.values(data)[i].toFixed(10)+"</td>";
        }
      }
      row.innerHTML += "<td><span class='sparkline' id='spark_"+data.name+"'></span></td>";
